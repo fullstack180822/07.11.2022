@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>Class & event.target</h1>
+<div id="div1">
+    <img src="images/smiley.jpg" id="img1" class="smiley">
+    <img src="images/smiley.jpg" id="img2" class="smiley">
+    <img src="images/smiley.jpg" id="img3" class="smiley">
+    <img src="images/smiley.jpg" id="img4" class="smiley">
+    <img src="images/smiley.jpg" id="img5" class="smiley">
+</div>
+<p>
+<p>
+
+<script>
+    var debug = 0;
+	$(function()
+	{
+        $('.smiley').css({opacity :'0.5'});
+		$('.smiley').on('mouseover', function() 
+        {
+           $('#' + event.target.id).css({opacity :'1'});
+           console.log(event)
+        });
+		$('.smiley').on('mouseleave', function() 
+        {
+          $('#' + event.target.id).css({opacity :'0.5'});
+        });        
+	});
+</script>
+
+</body>
+
+</html>
