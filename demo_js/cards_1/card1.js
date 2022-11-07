@@ -89,10 +89,9 @@ function draw_winner() {
 
 init_game();
 
-setInterval(() => {
-    if (!game_data.game_over) {
-        console.log('=====================================');
-        flip_cards();
-    } else 
-    draw_winner()
-}, 3000)
+flip_cards()
+while (!game_data.game_over) {
+    console.log('=====================================');
+    flip_cards();
+}
+draw_winner()
